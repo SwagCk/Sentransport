@@ -16,3 +16,11 @@
     font-size: 1rem;
     opacity: 0,9;
 }
+
+.header-date{
+    margin: 8px 0 0 0;
+    font-size : 1.5rem;
+    opacity: 0.85;
+    font-style: italic;
+}
+

@@ -1,0 +1,22 @@
+.statistique{
+    background-color: #5b1537;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    min-width: 120px;
+    flex: 1;
+}
+
+.stat-valeur{
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e7d9e0;
+}
+
+.stat-label{
+    font-size: 1rem;
+    color: #fff;
+}
