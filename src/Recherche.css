@@ -17,6 +17,27 @@
     border-color: #0a6e31;
 }
 
-.recherche-input :: placeholder {
+.recherche-input::placeholder {
     color: #b2bec3;
 }
+
+.recherche-button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    background-color: #0a6e31;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.recherche-button:hover {
+    background-color: #085a26;
+}
+
+.recherche-button:active {
+    background-color: #06451d;
+}
+

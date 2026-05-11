@@ -15,6 +15,18 @@
   flex: 1;
 }
 
+.compteur-recherches {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #0a6e31;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #e8f5e8;
+  border-radius: 8px;
+  border: 1px solid #c8e6c9;
+}
+
 
 
 * {
@@ -36,7 +48,7 @@ h1 , p{
     font-family: Times New Roman;
     font-size: 1.3rem;
     margin-bottom: 8px;
-    color: #ffffff;
+    color: #000;
     position: center;
   }
 

@@ -8,8 +8,12 @@ function Recherche ({valeur , onChange}) {
             className="recherche-input"
             placeholder="Rechercher une ligne (depart , arrivee)..."
             value={valeur}
-            onChange={e => onChange(e.target.value)}
+            onChange={(e) => onChange(e.target.value)}
             />
+
+            <button className="recherche-button" onClick={() => onChange("")}>
+                Effacer
+            </button>
         </div>
     );
 }

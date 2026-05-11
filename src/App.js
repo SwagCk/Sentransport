@@ -15,6 +15,8 @@ function App() {
 
   const [ligneSelectionnee , setLigneSelectionnee] = useState(null);
 
+  const [compteurRecherches, setCompteurRecherches] = useState(0);
+
   const lignes = [
     { id : 1 , numero : "1", depart : " Parcelles Assainies " , arrivee : " Plateau ", arrets : 14 , couleur : "#0b2916" , listeArrets : ["Parcelles U14" , "Parcelle U10" , "Camberene" , "Patte d'Oie", "Grand Dakar" , "Colobane" , "Ponty" , "Plateau" ] } ,
     { id : 2 , numero : "7", depart : " Guediawaye ", arrivee : " Place Obe", arrets : 18 , couleur : "#8a3c63" , listeArrets:  [" Guediawaye ", " Pikine ", " Thiaroye "," Keur Massar ", " Grand Yoff ", " Parcelles "," Liberte 6", " Place Obe"] } ,
@@ -33,6 +35,11 @@ function App() {
     ligne .numero.includes(recherche)
   );
 
+  function handleRechercheChange(nouvelleValeur) {
+    setRecherche(nouvelleValeur);
+    setCompteurRecherches(prev => prev + 1);
+  }
+
     function handleLigneClick(ligne) {
       if (ligneSelectionnee && ligneSelectionnee.id === ligne.id) {
         setLigneSelectionnee(null);
@@ -46,10 +53,13 @@ function App() {
   return(
     <div className="App">
       <Header />
+      <div className="compteur-recherches">
+        Vous avez effectué {compteurRecherches} recherche{compteurRecherches !== 1 ? 's' : ''}.
+      </div>
       <main className="contenu">
-        <Recherche valeur={recherche} onChange={setRecherche} />
+        <Recherche valeur={recherche} onChange={handleRechercheChange} />
         <p className="resultat-recherche">
-          { lignesFiltrees . length } ligne { lignesFiltrees . length > 1 ? 's' :''} trouvee { lignesFiltrees . length > 1 ? 's' : ''}
+          { lignesFiltrees . length === 0 ? "Aucune ligne trouvée" : `${lignesFiltrees.length} ligne${ lignesFiltrees . length > 1 ? 's' :''} trouvée${ lignesFiltrees . length > 1 ? 's' : ''}` }
         </p>
         {lignesFiltrees.map(ligne => (
           < LigneBus
